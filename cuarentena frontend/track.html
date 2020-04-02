@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TRACK</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery-3.4.1.js"></script>
+  <link rel="icon" type="image/png" href="pingulogo.png">
+  <script src="js/popper.js"></script>
+  <script>
+    function registra(){
+      var nombre= document.getElementById('nombre').value;
+      var trackid= document.getElementById('trackid').value;
+      var albumid= document.getElementById('albumid').value;
+      var mediatypeid= document.getElementById('mediatypeid').value;
+      var genreid= document.getElementById('genreid').value;
+      var compositor= document.getElementById('compositor').value;
+      var milliseconds= document.getElementById('milliseconds').value;
+      var bytes= document.getElementById('bytes').value;
+      var unitprice= document.getElementById('unitprice').value;
+
+      if (nombre==""){ alert("El nombre es obligatorio"); return;}
+      if (trackid==""){ alert("El identificador del track es obligatorio"); return;}
+      if (albumid==""){ alert("El identificador del album es obligatorio"); return;}
+      if (mediatypeid==""){ alert("El identificador del MediaType es obligatorio"); return;}
+      if (albumid==""){ alert("El identificador del genero es obligatorio"); return;}
+      if (compositor==""){ alert("El nombre del compositor es obligatorio"); return;}
+      if (milliseconds==""){ alert("La duracion del audio es obligatoria"); return;}
+      if (bytes==""){ alert("El Tamaño del audio es obligatorio"); return;}
+      if (unitprice==""){ alert("El precio del audio es obligatorio"); return;}
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Nombre del track: "+nombre+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Id del track: "+trackid+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Id del album: "+albumid+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Id del MediaType: "+mediatypeid+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Nombre del compositor: "+compositor+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>duracion del audio: "+milliseconds+"</div>";
+       document.getElementById("alumnos").innerHTML+="<div class='well'>Tamaño del audio: "+bytes+"</div>";
+       document.getElementById("alumnos").innerHTML+="<div class='well'>Precio del audio: "+unitprice+"</div>";
+
+    }
+    function borrar(){
+      document.getElementById("alumnos").innerHTML="";
+    }
+  </script>
+
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="frontend.html" >
+    <img src="pingulogo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+  Pingüi-Records</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">  
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Formularios
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="artist.html">Artist</a>
+          <a class="dropdown-item" href="costumer.html">Costumer</a>
+          <a class="dropdown-item" href="employee.html">Employee</a>
+          <a class="dropdown-item" href="track.html">Track</a>
+          <a class="dropdown-item" href="genre.html">Genre</a>
+          <a class="dropdown-item" href="mediatype.html">MediaType</a>
+          <a class="dropdown-item" href="album.html">Album</a>
+          <a class="dropdown-item" href="invoice.html">Invoice</a>
+          <a class="dropdown-item" href="playlist.html">Playlist</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="well"><h1>Formulario Track</h1></div>
+  <div class="form-group">
+      <label for="">Nombre del Track</label>
+      <input type="text" id="nombre" class="form-control" placeholder="Teclea el nombre del track">
+  </div>
+  <div class="form-group">
+      <label for="">Track Id</label>
+      <input type="number" id="trackid" class="form-control" placeholder="Teclea el identificador del Track">
+  </div> 
+  <div class="form-group">
+      <label for="">Album Id</label>
+      <input type="number" id="id" class="form-control" placeholder="Teclea el identificador del Album">
+  </div>
+  <div class="form-group">
+      <label for="">Mediatype Id</label>
+      <input type="number" id="mediatypeid" class="form-control" placeholder="Teclea el identificador del artist">
+  </div> 
+  <div class="form-group">
+      <label for="">Genre Id</label>
+      <input type="number" id="genreid" class="form-control" placeholder="Teclea el identificador del genero" >
+  </div> 
+  <div class="form-group">
+      <label for="">Nombre del compositor</label>
+      <input type="text" id="compositor" class="form-control" placeholder="Teclea el nombre del compositor">
+  </div>
+  <div class="form-group">
+      <label for="">Duracion del audio</label>
+      <input type="number" id="milliseconds" class="form-control" placeholder="Teclea la duracion del audio" >
+  </div> 
+  <div class="form-group">
+      <label for="">Tamaño en Bytes</label>
+      <input type="number" id="bytes" class="form-control" placeholder="Teclea el Tamaño del audio" >
+  </div> 
+  <div class="form-group">
+      <label for="">Precio de Unidad</label>
+      <input type="number" id="unitprice" class="form-control" placeholder="Teclea el precio de la unidad" >
+  </div> 
+</div>
+<div class="text-center">
+      <button class="btn btn-info" onclick="registra()">Guardar</button>
+      <button class="btn btn-danger" onclick="borrar()">Borrar</button>
+    </div>
+  </div>
+<div class="container" id="alumnos"></div>
+
+
+
+<div class="row card text-center">
+  <div class="col">Footer &copy; Reserved</div><br>
+<script src="js/bootstrap.js"></script>
+<script>
+  $(document).ready(function(){
+    $(function (){
+      $('[data-toggle="popover"]').popover()
+    })
+  });
+</script>
+</div>
+</body>
+</html>

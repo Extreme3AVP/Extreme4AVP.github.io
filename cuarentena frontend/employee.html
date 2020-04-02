@@ -1,0 +1,199 @@
+<head>
+  <meta charset="utf-8">
+  <title>EMPLOYEE</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery-3.4.1.js"></script>
+  <link rel="icon" type="image/png" href="pingulogo.png">
+  <script src="js/popper.js"></script>
+  <script>
+    function registra(){
+      
+      var employee= document.getElementById('employee').value;
+      var firstname= document.getElementById('firstname').value;
+      var lastname= document.getElementById('lastname').value;
+      var title= document.getElementById('title').value;
+      var address= document.getElementById('address').value;
+      var city= document.getElementById('city').value;
+      var state= document.getElementById('state').value;
+      var country= document.getElementById('country').value;
+      var postalcode= document.getElementById('postalcode').value;
+      var phone= document.getElementById('phone').value;
+      var fax= document.getElementById('fax').value;
+      var email= document.getElementById('email').value;
+      var birthdate= document.getElementById('birthdate').value;
+      var hiredate= document.getElementById('hiredate').value;
+
+      var reportsto= document.getElementById('reportsto').value;
+
+      
+      if (employee==""){ alert("El identificador del employee es obligatorio"); return;}
+      if (firstname==""){ alert("El First Name es obligatorio"); return;}
+      if (lastname==""){ alert("El Last Name es obligatorio"); return;}
+      if (title==""){ alert("El title es obligatorio"); return;}
+      if (address==""){ alert("El Address es obligatorio"); return;}
+      if (city==""){ alert("El City es obligatorio"); return;}
+      if (state==""){ alert("El State es obligatorio"); return;}
+      if (country==""){ alert("El country es obligatorio"); return;}
+      if (postalcode==""){ alert("El postal code es obligatorio"); return;}
+      if (phone==""){ alert("El phone es obligatorio"); return;}
+      if (fax==""){ alert("El fax es obligatorio"); return;}
+      if (email==""){ alert("El email es obligatorio"); return;}
+      if (birthdate==""){ alert("El birthdate es obligatorio"); return;}
+      if (hiredate==""){ alert("El hiredate es obligatorio"); return;}
+
+      if (reportsto==""){ alert("El reports to es obligatorio"); return;}
+
+      
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Id del employee: "+employee+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>First Name: "+firstname+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Last Name: "+lastname+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>title: "+title+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Address: "+address+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>State: "+state+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Country: "+country+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Billing Postal Code: "+postalcode+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>phone: "+phone+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>fax: "+fax+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>email: "+email+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>birthdate: "+birthdate+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>hiredate: "+hiredate+"</div>";
+
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Id del reports to: "+reportsto+"</div>";
+
+
+    }
+    function borrar(){
+      document.getElementById("alumnos").innerHTML="";
+    }
+  </script>
+
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="frontend.html" >
+    <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+  Pingüi-Records</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">  
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Formularios
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="artist.html">Artist</a>
+          <a class="dropdown-item" href="costumer.html">Costumer</a>
+          <a class="dropdown-item" href="employee.html">Employee</a>
+          <a class="dropdown-item" href="track.html">Track</a>
+          <a class="dropdown-item" href="genre.html">Genre</a>
+          <a class="dropdown-item" href="mediatype.html">MediaType</a>
+          <a class="dropdown-item" href="album.html">Album</a>
+          <a class="dropdown-item" href="invoice.html">Invoice</a>
+          <a class="dropdown-item" href="playlist.html">Playlist</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="well"><h1>Formulario Invoice</h1></div>
+ 
+  <div class="form-group">
+      <label for="">Costumer Id</label>
+      <input type="number" id="employee" class="form-control" placeholder="Teclea el identificador del Costumer">
+  </div> 
+  <div class="form-group">
+      <label for="">First Name</label>
+      <input type="text" id="firstname" class="form-control" placeholder="Teclea el First Name">
+  </div>
+  <div class="form-group">
+      <label for="">Last Name</label>
+      <input type="text" id="lastname" class="form-control" placeholder="Teclea el Last Name">
+  </div> 
+  <div class="form-group">
+      <label for="">title</label>
+      <input type="text" id="title" class="form-control" placeholder="Teclea el title" >
+  </div> 
+  <div class="form-group">
+      <label for="">Address</label>
+      <input type="text" id="address" class="form-control" placeholder="Teclea el Address">
+  </div>
+  <div class="form-group">
+      <label for="">City</label>
+      <input type="text" id="city" class="form-control" placeholder="Teclea el City" >
+  </div> 
+  <div class="form-group">
+      <label for="">State</label>
+      <input type="text" id="state" class="form-control" placeholder="Teclea el State" >
+  </div> 
+  <div class="form-group">
+      <label for="">country</label>
+      <input type="text" id="country" class="form-control" placeholder="Teclea el country" >
+  </div> 
+</div> 
+<div class="form-group">
+      <label for="">Postal Code</label>
+      <input type="text" id="postalcode" class="form-control" placeholder="Teclea el Postal Code" >
+  </div> 
+<div class="form-group">
+      <label for="">phone</label>
+      <input type="text" id="phone" class="form-control" placeholder="Teclea el phone" >
+  </div> 
+  <div class="form-group">
+      <label for="">fax</label>
+      <input type="text" id="fax" class="form-control" placeholder="Teclea el fax" >
+  </div> 
+</div> 
+<div class="form-group">
+      <label for="">email</label>
+      <input type="text" id="email" class="form-control" placeholder="Teclea el email" >
+  </div> 
+  <div class="form-group">
+      <label for="">birth date</label>
+      <input type="date" id="birthdate" class="form-control" placeholder="Teclea el birth date" >
+  </div> 
+</div> 
+<div class="form-group">
+      <label for="">hire date</label>
+      <input type="date" id="hiredate" class="form-control" placeholder="Teclea el hire date" >
+  </div> 
+
+
+
+
+<div class="form-group">
+      <label for="">reports to</label>
+      <input type="number" id="reportsto" class="form-control" placeholder="Teclea el reports to">
+  </div>
+<div class="text-center">
+      <button class="btn btn-info" onclick="registra()">Guardar</button>
+      <button class="btn btn-danger" onclick="borrar()">Borrar</button>
+    </div>
+  </div>
+<div class="container" id="alumnos"></div>
+
+
+
+<div class="row card text-center">
+  <div class="col">Footer &copy; Reserved</div><br>
+<script src="js/bootstrap.js"></script>
+<script>
+  $(document).ready(function(){
+    $(function (){
+      $('[data-toggle="popover"]').popover()
+    })
+  });
+</script>
+</div>
+</body>
+</html>

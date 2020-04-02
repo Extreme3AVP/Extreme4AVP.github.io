@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ALBUM</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script src="js/jquery-3.4.1.js"></script>
+  <link rel="icon" type="image/png" href="pingulogo.png">
+  <script src="js/popper.js"></script>
+  <script>
+    function registra(){
+      var nombre= document.getElementById('nombre').value;
+      var albumid= document.getElementById('albumid').value;
+      var artistid= document.getElementById('artistid').value;
+
+      if (nombre==""){ alert("El nombre es obligatorio"); return;}
+      if (albumid==""){ alert("El identificador del album es obligatorio"); return;}
+      if (artistid==""){ alert("El identificador del artista es obligatorio"); return;}
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Nombre del Album: "+nombre+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Id del Album: "+albumid+"</div>";
+      document.getElementById("alumnos").innerHTML+="<div class='well'>Id del Artista: "+artistid+"</div>";
+    }
+    function borrar(){
+      document.getElementById("alumnos").innerHTML="";
+    }
+  </script>
+
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="frontend.html" >
+  	<img src="pingulogo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+  Pingüi-Records</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">  
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Formularios
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="artist.html">Artist</a>
+          <a class="dropdown-item" href="costumer.html">Costumer</a>
+          <a class="dropdown-item" href="employee.html">Employee</a>
+          <a class="dropdown-item" href="track.html">Track</a>
+          <a class="dropdown-item" href="genre.html">Genre</a>
+          <a class="dropdown-item" href="mediatype.html">MediaType</a>
+          <a class="dropdown-item" href="album.html">Album</a>
+          <a class="dropdown-item" href="invoice.html">Invoice</a>
+          <a class="dropdown-item" href="playlist.html">Playlist</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="well"><h1>Formulario Album</h1></div>
+  <div class="form-group">
+      <label for="">Nombre del album</label>
+      <input type="text" id="nombre" class="form-control" placeholder="Teclea el nombre del album">
+  </div>
+  <div class="form-group">
+      <label for="">Abum Id</label>
+      <input type="number" id="albumid" class="form-control" placeholder="Teclea el identificador del album" >
+  </div>
+  <div class="form-group">
+      <label for="">Artist Id</label>
+      <input type="number" id="artistid" class="form-control" placeholder="Teclea el identificador del artista">
+  </div> 
+</div>
+<div class="text-center">
+      <button class="btn btn-info" onclick="registra()">Guardar</button>
+      <button class="btn btn-danger" onclick="borrar()">Borrar</button>
+    </div>
+  </div>
+<div class="container" id="alumnos"></div>
+
+
+
+<div class="row card text-center">
+	<div class="col">Footer &copy; Reserved</div><br>
+<script src="js/bootstrap.js"></script>
+<script>
+  $(document).ready(function(){
+    $(function (){
+      $('[data-toggle="popover"]').popover()
+    })
+  });
+</script>
+</div>
+</body>
+</html>
